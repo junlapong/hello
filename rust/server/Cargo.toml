@@ -1,0 +1,8 @@
+[package]
+authors = ["Junlapong L. <junlapong@gmail.com>"]
+edition = "2018"
+name = "server"
+version = "0.1.0"
+[dependencies]
+nickel = "0.11.0"
+
