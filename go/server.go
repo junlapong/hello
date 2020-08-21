@@ -7,7 +7,12 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, World!\n")
+		fmt.Fprintln(w, "Hello, World!")
+	})
+
+	http.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("Content-Type", "application/json")
+		fmt.Fprint(w, `{"message":"pong"}`)
 	})
 
 	fmt.Println("start http://localhost:8080")
